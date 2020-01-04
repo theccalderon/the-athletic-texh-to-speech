@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+
+  <body>
+    <div id="textToSynth">
+      <input autofocus size="23" type="text" id="textEntry" placeholder="Input your email here to get a link to the audio file."/>
+      <button id='loginOrSubscribe' class="btn default">Log in or subscribe</button>
+      <button id='tts' class="btn default" style="display:none;">Synthesize</button>
+      <p id="result" style="display:none;">Click on Synthesize to convert the content to audio</p>
+    </div>
+    <!-- <audio id="audioPlayback0" controls>
+      <source id="audioSource0" type="audio/mp3" src="">
+    </audio> -->
+    <!-- (script elements go here) -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.588.0.min.js"></script>
+    <script src="popup.js"></script>
+ </body>
+</html>
