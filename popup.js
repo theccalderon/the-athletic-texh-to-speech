@@ -69,6 +69,10 @@ loginOrSubscribe.onclick = function(element) {
     else
     { 
       console.log(data);           // successful response
+      let email = document.getElementById('textEntry').value;
+      chrome.storage.local.set({email: email}, function() {
+        console.log('email is ' + email);
+      });
       for (let index = 0; index < data.Subscriptions.length; index++) {
         const element = data.Subscriptions[index];
         if (element.Endpoint == document.getElementById('textEntry').value)
@@ -78,20 +82,19 @@ loginOrSubscribe.onclick = function(element) {
           document.getElementById('result').innerHTML = "You are already subscribed!, now click on Synthesize to convert the content to audio";
           document.getElementById('result').style.display = "block";
           document.getElementById('tts').style.display = "block";
+          document.getElementById('loginOrSubscribe').style.display = "none";
+          document.getElementById('textEntry').style.display = "none";
           return;
         }
       }
       // subscribe
-      let email = document.getElementById('textEntry').value;
+      
       subscribeToSNS(email);
       document.getElementById('loginOrSubscribe').style.display = "none";
       document.getElementById('textEntry').style.display = "none";
       document.getElementById('result').innerHTML = "Please confirm the subscription via email to be able to receive the audio file.";
       document.getElementById('result').style.display = "block";
       document.getElementById('tts').style.display = "block";
-      chrome.storage.local.set({email: email}, function() {
-        console.log('email is ' + email);
-      });
     }
   });
   
