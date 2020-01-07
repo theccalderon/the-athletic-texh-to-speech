@@ -19,19 +19,6 @@ let loginOrSubscribe = document.getElementById('loginOrSubscribe');
 AWS.config.region = 'us-east-1'; 
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: 'us-east-1:71730a6b-dd40-461c-bc75-b2fc4bff1d06'});
 let snsTopicArn = "arn:aws:sns:us-east-1:894697003047:theathletic-audio";
-  // chrome.storage.sync.get('color', function(data) {
-  //   changeColor.style.backgroundColor = data.color;
-  //   changeColor.setAttribute('value', data.color);
-  // });
-
-  // changeColor.onclick = function(element) {
-  //   let color = element.target.value;
-  //   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-  //     chrome.tabs.executeScript(
-  //         tabs[0].id,
-  //         {code: 'document.body.style.backgroundColor = "' + color + '";'});
-  //   });
-  // };
 
   
   function subscribeToSNS(email)
@@ -131,20 +118,6 @@ loginOrSubscribe.onclick = function(element) {
             }
             console.log(data.SynthesisTask.OutputUri)
             document.getElementById('result').innerHTML = data.SynthesisTask.OutputUri;
-          //   //console.log(event['detail']['requestParameters']['key']);
-          //   key = data.SynthesisTask.OutputUri.split("/")[4];
-          //   //granting read permissions
-          //   var params = {
-          //     Bucket: 'ccalderon-theathletic1', /* required */
-          //     Key: key, /* required */
-          //     ACL: "public-read"
-          //   };
-          //   var s3 = new AWS.S3({apiVersion: '2006-03-01'});
-          //   s3.putObjectAcl(params, function(err, data) {
-          //     if (err) console.log(err, err.stack); // an error occurred
-          //     else     console.log(data);           // successful response
-          //   });
-          //   return;
           });
         }
         else

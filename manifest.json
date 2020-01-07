@@ -1,7 +1,7 @@
 {
-    "name": "Getting Started Example",
+    "name": "TheAReader",
     "version": "1.0",
-    "description": "Build an Extension!",
+    "description": "Convert an article from The Athletic to speech",
     "permissions": ["activeTab","declarativeContent","storage"],
     "background": {
       "scripts": ["background.js"],
