@@ -1,2 +1,3 @@
 .DS_Store
 public object s3.log
+private/config.json

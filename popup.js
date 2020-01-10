@@ -16,9 +16,10 @@ chrome.storage.local.get(['email'], function(data) {
 let tts = document.getElementById('tts');
 let loginOrSubscribe = document.getElementById('loginOrSubscribe');
 
-AWS.config.region = 'us-east-1'; 
-AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: 'us-east-1:71730a6b-dd40-461c-bc75-b2fc4bff1d06'});
-let snsTopicArn = "arn:aws:sns:us-east-1:894697003047:theathletic-audio";
+const config_data = require('./private/config.json');
+AWS.config.region = config_data.amazon.region; 
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: config_data.amazon.cognito_identity_pool});
+let snsTopicArn = config_data.amazon.sns_topic;
 
   
   function subscribeToSNS(email)
