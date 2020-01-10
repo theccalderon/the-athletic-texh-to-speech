@@ -2,5 +2,6 @@
         {
                 "region" : "us-east-1",
                 "cognito_identity_pool": "XXXXXXXXXXXXXX",
-                "sns_topic": "YYYYYYYYYYYYYYY"
+                "sns_topic": "YYYYYYYYYYYYYYY",
+                "s3_bucket": "ZZZZZZZZZZZZZZZ"
         }
