@@ -97,7 +97,7 @@ loginOrSubscribe.onclick = function(element) {
           
           var speechParams = {
               OutputFormat: "mp3",
-              OutputS3BucketName: "ccalderon-theathletic1",
+              OutputS3BucketName: config_data.amazon.s3_bucket,
               Engine: "neural",
               Text: "",
               TextType: "text",
