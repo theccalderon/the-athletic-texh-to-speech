@@ -16,10 +16,9 @@ chrome.storage.local.get(['email'], function(data) {
 let tts = document.getElementById('tts');
 let loginOrSubscribe = document.getElementById('loginOrSubscribe');
 
-const config_data = require('./private/config.json');
-AWS.config.region = config_data.amazon.region; 
-AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: config_data.amazon.cognito_identity_pool});
-let snsTopicArn = config_data.amazon.sns_topic;
+AWS.config.region = "XXXXXXXXXX";
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: "YYYYYYYYYYYY"});
+let snsTopicArn = "ZZZZZZZZZZZZZZ";
 
   
   function subscribeToSNS(email)
@@ -97,7 +96,7 @@ loginOrSubscribe.onclick = function(element) {
           
           var speechParams = {
               OutputFormat: "mp3",
-              OutputS3BucketName: config_data.amazon.s3_bucket,
+              OutputS3BucketName: "WWWWWWWWWWWWWW",
               Engine: "neural",
               Text: "",
               TextType: "text",
