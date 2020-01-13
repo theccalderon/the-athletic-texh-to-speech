@@ -19,6 +19,7 @@ let loginOrSubscribe = document.getElementById('loginOrSubscribe');
 AWS.config.region = "XXXXXXXXXX";
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: "YYYYYYYYYYYY"});
 let snsTopicArn = "ZZZZZZZZZZZZZZ";
+let s3_bucket = "WWWWWWWWWWWWW";
 
   
   function subscribeToSNS(email)
@@ -96,7 +97,7 @@ loginOrSubscribe.onclick = function(element) {
           
           var speechParams = {
               OutputFormat: "mp3",
-              OutputS3BucketName: "WWWWWWWWWWWWWW",
+              OutputS3BucketName: s3_bucket,
               Engine: "neural",
               Text: "",
               TextType: "text",

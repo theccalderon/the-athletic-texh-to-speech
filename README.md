@@ -12,6 +12,5 @@ You can follow [https://developer.chrome.com/extensions/getstarted](https://deve
 
 ## Usage
 1. `git clone https://github.com/theccalderon/the-athletic-texh-to-speech.git`
-2. rename `config.json-example` to `config.json`
-3. replace the values of `region`, `cognito_identity_pool`, `s3_bucket` and `sns_topic` with the values created in the Pre-requisites section.
-4. Follow [https://developer.chrome.com/extensions/getstarted](https://developer.chrome.com/extensions/getstarted) to load the extension into your Google Chrome.
+2. replace the values of `AWS.config.region`(`popup.js:19`), `IdentityPoolId`(`popup.js:20`), `snsTopicArn`(`popup.js:21`) and `s3_bucket`(`popup.js:22`) with the values created in the Pre-requisites section.
+3. Follow [https://developer.chrome.com/extensions/getstarted](https://developer.chrome.com/extensions/getstarted) to load the extension into your Google Chrome.
